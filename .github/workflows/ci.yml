@@ -89,7 +89,7 @@ jobs:
         shell: bash
         run: |
           brew install automake autoconf-archive
-      - uses: lukka/get-cmake@latest
+      - uses: lukka/get-cmake@v3.31.6
       - name: Install vcpkg and packages
         uses: lukka/run-vcpkg@v11
         id: runvcpkg
