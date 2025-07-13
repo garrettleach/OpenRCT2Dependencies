@@ -15,6 +15,7 @@
             "name": "fribidi",
             "platform": "!arm & !osx"
         },
+        "glm",
         "gtest",
         {
             "name": "icu",
@@ -37,6 +38,7 @@
         },
         "sdl2",
         "speexdsp",
+        "vulkan",
         "zlib"
     ],
     "overrides": [
