@@ -11,7 +11,7 @@ find x64-osx-openrct2/lib -type f -name "*.dylib" | while IFS= read -r lib; do
       lib_name=$(echo $lib_filename | cut -d'.' -f 1)
       echo "Creating universal (fat) $lib_name"
       for arch in x64 arm64; do
-        if [[ "$lib_name" = "libzip" || $lib_name = libicu* ]]; then
+        if [[ "$lib_name" = "libzip" ]]; then
           # libzip embeds the full rpath in LC_RPATH
           # they will be different for arm64 and x86_64
           # this will cause issues, and is unnecessary
