@@ -31,9 +31,9 @@ find x64-osx-openrct2/lib -type f -name "*.dylib" | while IFS= read -r lib; do
           # Some packages (currently only brotli) have absolute paths in the LC_LOAD_DYLIB command.
           # This is not supported by the universal build and needs to be changes to @rpath.
 
-          install_name_tool -change /Users/runner/work/Dependencies/Dependencies/vcpkg/packages/brotli_$arch-osx-openrct2/lib/libbrotlicommon.1.dylib "@rpath/libbrotlicommon.1.dylib" "$arch-osx-openrct2/lib/$relative_path"
-          install_name_tool -change /Users/runner/work/Dependencies/Dependencies/vcpkg/packages/brotli_$arch-osx-openrct2/lib/libbrotlidec.1.dylib "@rpath/libbrotlidec.1.dylib" "$arch-osx-openrct2/lib/$relative_path"
-          install_name_tool -change /Users/runner/work/Dependencies/Dependencies/vcpkg/packages/brotli_$arch-osx-openrct2/lib/libbrotlienc.1.dylib "@rpath/libbrotlienc.1.dylib" "$arch-osx-openrct2/lib/$relative_path"
+          install_name_tool -change /Users/runner/work/OpenRCT2Dependencies/OpenRCT2Dependencies/vcpkg/packages/brotli_$arch-osx-openrct2/lib/libbrotlicommon.1.dylib "@rpath/libbrotlicommon.1.dylib" "$arch-osx-openrct2/lib/$relative_path"
+          install_name_tool -change /Users/runner/work/OpenRCT2Dependencies/OpenRCT2Dependencies/vcpkg/packages/brotli_$arch-osx-openrct2/lib/libbrotlidec.1.dylib "@rpath/libbrotlidec.1.dylib" "$arch-osx-openrct2/lib/$relative_path"
+          install_name_tool -change /Users/runner/work/OpenRCT2Dependencies/OpenRCT2Dependencies/vcpkg/packages/brotli_$arch-osx-openrct2/lib/libbrotlienc.1.dylib "@rpath/libbrotlienc.1.dylib" "$arch-osx-openrct2/lib/$relative_path"
 
           # Once done, check that it was the only absolute path in the LC_LOAD_DYLIB command.
           if otool -L "$arch-osx-openrct2/lib/$relative_path" | grep -q /Users/runner/work; then
