@@ -1,3 +1,5 @@
 artifacts/
 universal-osx-openrct2/
 vcpkg/
+vcpkg_installed/
+.vs
